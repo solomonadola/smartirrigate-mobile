@@ -1,5 +1,9 @@
 {
   "expo": {
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "svg"]
+    },
     "name": "smartirrigat-mobile",
     "slug": "smartirrigat-mobile",
     "version": "1.0.0",
