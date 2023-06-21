@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import newUserSvg from "../assets/new-user.svg";
 import Svg, { Image } from "react-native-svg";
+import DashboardElements from "../components/DashboardElements";
 
 const RegistrationScreen = () => {
   const [firstName, setFirstName] = useState("");
@@ -30,7 +31,6 @@ const RegistrationScreen = () => {
           <Image href={newUserSvg} width="100%" height={100} />
         </Svg>
       </View>
-
       <View style={styles.formContainer}>
         <TextInput
           style={styles.input}
@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingVertical: 10,
   },
   header: {
     flexDirection: "row",
