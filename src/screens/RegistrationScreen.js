@@ -98,6 +98,9 @@ const RegistrationScreen = () => {
         >
           <Text style={styles.registerButtonText}>Create</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonContainer}>
+          <Text style={styles.buttonText}>Sign In</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -144,6 +147,18 @@ const styles = StyleSheet.create({
   registerButtonText: {
     color: "#fff",
     fontSize: 16,
+  },
+  buttonContainer: {
+    width: "100%",
+    marginVertical: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: "#1ad766",
+    fontSize: 18,
+    fontWeight: "light",
   },
 });
 

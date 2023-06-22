@@ -25,24 +25,24 @@ const DashboardScreen = () => {
       <View style={styles.info}>
         <View style={styles.circle1}>
           {/* <SvgUri uri="humidity.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>Last </Text>
+          <Text style={styles.label}>Last </Text>
           <View style={styles.bar} />
-          <Text style={styles.measurementValue}>{lastIrrigationTime}</Text>
+          <Text style={styles.value}>{lastIrrigationTime}</Text>
         </View>
 
         <View style={styles.circle2}>
           {/* <SvgUri uri="temperature.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>Mode</Text>
+          <Text style={styles.label}>Mode</Text>
           <View style={styles.bar} />
 
-          <Text style={styles.measurementValue}>{"auto"}</Text>
+          <Text style={styles.value}>{"auto"}</Text>
         </View>
 
         <View style={styles.circle1}>
           {/* <SvgUri uri="moisture.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>next </Text>
+          <Text style={styles.label}>next </Text>
           <View style={styles.bar} />
-          <Text style={styles.measurementValue}>{nextIrrigationTime}</Text>
+          <Text style={styles.value}>{nextIrrigationTime}</Text>
         </View>
       </View>
       <View style={styles.line} />
@@ -67,20 +67,20 @@ const DashboardScreen = () => {
         </View>
         <View style={styles.measurement}>
           {/* <SvgUri uri="humidity.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>Humidity</Text>
-          <Text style={styles.measurementValue}>{humidity}</Text>
+          <Text style={styles.measurementLabel}>Status</Text>
+          <Text style={styles.measurementValue}>Medium</Text>
         </View>
 
         <View style={styles.measurement}>
           {/* <SvgUri uri="temperature.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>Temperature</Text>
-          <Text style={styles.measurementValue}>{temperature}</Text>
+          <Text style={styles.measurementLabel}>Mode</Text>
+          <Text style={styles.measurementValue}>Auto</Text>
         </View>
 
         <View style={styles.measurement}>
           {/* <SvgUri uri="moisture.svg" width={48} height={48} /> */}
-          <Text style={styles.measurementLabel}>Moisture</Text>
-          <Text style={styles.measurementValue}>{moisture}</Text>
+          <Text style={styles.measurementLabel}>Schedule</Text>
+          <Text style={styles.measurementValue}>{nextIrrigationTime}</Text>
         </View>
       </View>
     </View>
@@ -127,9 +127,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   measurement: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#1ad766",
     padding: 16,
-    borderRadius: 8,
+    borderRadius: 5,
     alignItems: "center",
     width: "40%",
     margin: 8,
@@ -137,10 +137,22 @@ const styles = StyleSheet.create({
   measurementLabel: {
     fontSize: 14,
     fontWeight: "bold",
+    color: "#fff",
     marginTop: 8,
   },
   measurementValue: {
     fontSize: 13,
+    color: "#fff",
+    fontWeight: "light",
+    marginTop: 8,
+  },
+  label: {
+    fontSize: "4.5vw",
+    fontWeight: "bold",
+    marginTop: 8,
+  },
+  value: {
+    fontSize: "3.5vw",
     fontWeight: "light",
     marginTop: 8,
   },
@@ -158,9 +170,8 @@ const styles = StyleSheet.create({
     borderColor: "#1ad766",
     padding: 16,
     alignItems: "center",
-    width: 100,
-    height: 100,
-    marginRight: 8,
+    width: "25vw",
+    height: "25vw",
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
@@ -173,9 +184,8 @@ const styles = StyleSheet.create({
     borderColor: "#1ad766",
     padding: 16,
     alignItems: "center",
-    width: 120,
-    height: 120,
-    marginRight: 8,
+    width: "30vw",
+    height: "30vw",
     justifyContent: "center",
     alignItems: "center",
   },
