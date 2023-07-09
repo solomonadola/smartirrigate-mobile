@@ -26,11 +26,17 @@ const DashboardScreen = ({ navigation }) => {
   const [nextIrrigationTime, setNextIrrigationTime] = useState("");
   const [nextIrrigationTimeInDet, setNextIrrigationTimeInDet] = useState("");
   const [newNotification, setNewNotification] = useState({});
+  const [notificationCount, setNotificationCount] = useState(0);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+  setTimeout(() => {
     fetchData();
-  }, []);
-
+  }, 0);
+  setInterval(() => {
+    fetchData();
+  }, 30000);
   const fetchData = async () => {
     try {
       const token = await AsyncStorage.getItem("token");
@@ -64,7 +70,6 @@ const DashboardScreen = ({ navigation }) => {
         setTemperature(data.sensorReadings[1].reading + " °C");
         setMoistureLabel(data.sensorReadings[2].sensor.sensing_type);
         setMoisture(data.sensorReadings[2].reading + "%");
-
         // const date_string = "2023-06-27T12:20:27.363Z";
         // const dt = datetime.datetime.fromisoformat(date_string);
         // const formatted_date = dt.strftime("%a %d %I:%M %p");
@@ -141,7 +146,7 @@ const DashboardScreen = ({ navigation }) => {
           <FontAwesome name="bars" size={24} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={onBellPress}>
-          {newNotification.length > 0 && (
+          {notificationCount > 0 && (
             <Text style={styles.notificationPop}>{newNotification.length}</Text>
           )}
           <FontAwesome name="bell" size={24} color="white" />
@@ -378,11 +383,10 @@ const styles = StyleSheet.create({
   },
   info: {
     flex: 1,
-
     flexDirection: "row",
     justifyContent: "center",
     position: "relative",
-    top: 50,
+    top: 30,
   },
   circle1: {
     backgroundColor: "#fff",
